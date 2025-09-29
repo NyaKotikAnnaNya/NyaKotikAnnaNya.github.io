@@ -1,4 +1,3 @@
-/* Mobile First стили */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,21 +14,23 @@ body {
     flex-direction: column;
 }
 
-/* Header Mobile */
 header {
     background: #ffffff;
     border-bottom: 1px solid #e2e8f0;
     padding: 1rem;
     width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-title {
+    display: flex;
     align-items: center;
     gap: 1rem;
 }
@@ -46,7 +47,6 @@ h1 {
     text-align: center;
 }
 
-/* Navigation Mobile - вертикальный список */
 nav {
     width: 100%;
     display: flex;
@@ -66,13 +66,14 @@ nav a {
     font-weight: 500;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     background-color: #4299e1;
     color: white;
     transform: translateY(-2px);
+    outline: none;
 }
 
-/* Main content Mobile */
 main {
     flex: 1;
     background: white;
@@ -83,12 +84,10 @@ main {
     gap: 2rem;
 }
 
-/* Секции контента */
 .content-section {
-    scroll-margin-top: 100px; /* Для плавной прокрутки с учетом фиксированного header */
+    scroll-margin-top: 20px; 
 }
 
-/* Используем order для изменения порядка отображения на мобильных */
 #links-section {
     order: 2;
 }
@@ -101,7 +100,6 @@ main {
     order: 3;
 }
 
-/* Заголовки разделов */
 h2 {
     color: #2d3748;
     font-weight: 600;
@@ -111,9 +109,9 @@ h2 {
     font-size: 1.4rem;
 }
 
-/* Стили для списка ссылок - ВЕРТИКАЛЬНЫЙ СПИСОК */
 .links-list {
-    list-style-type: none;
+    list-style-type: decimal;
+    margin-left: 1.5rem;
 }
 
 .links-list li {
@@ -127,10 +125,8 @@ h2 {
 .links-list li:hover {
     background-color: #f7fafc;
     border-left-color: #4299e1;
-    transform: translateX(5px);
 }
 
-/* Специальные стили для разных типов ссылок */
 .links-list li:nth-child(odd) {
     background-color: #f8fafc;
 }
@@ -139,19 +135,19 @@ h2 {
     background-color: #ffffff;
 }
 
-/* Links */
 a {
     color: #2b6cb0;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-a:hover {
+a:hover,
+a:focus {
     color: #2c5282;
     text-decoration: underline;
+    outline: none;
 }
 
-/* Стили для изображений в списке ссылок */
 .links-list img {
     border: 1px solid #e2e8f0;
     border-radius: 6px;
@@ -161,9 +157,9 @@ a:hover {
     display: block;
 }
 
-/* Стили для вложенных списков */
 .links-list ol {
     margin: 0.5rem 0 0.5rem 1.5rem;
+    list-style-type: decimal;
 }
 
 .links-list ol li {
@@ -175,21 +171,20 @@ a:hover {
 
 .links-list ol li:hover {
     background: none;
-    transform: none;
     border-left: none;
 }
 
-/* Table Mobile */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
     font-size: 0.8rem;
-    overflow-x: auto;
-    display: block;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border-radius: 8px;
     background: white;
+    min-width: 600px; 
 }
 
 th {
@@ -210,7 +205,6 @@ tr:hover {
     background-color: #ebf8ff;
 }
 
-/* Form styles Mobile */
 form {
     width: 100%;
     background: #f8fafc;
@@ -254,9 +248,14 @@ input[type="checkbox"] {
     margin-right: 0.5rem;
 }
 
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 .radio-label {
     display: inline-block;
-    margin-right: 1.5rem;
     font-weight: normal;
 }
 
@@ -267,6 +266,7 @@ select[multiple] {
 textarea {
     resize: vertical;
     min-height: 100px;
+    width: 100%;
 }
 
 button[type="submit"] {
@@ -282,12 +282,12 @@ button[type="submit"] {
     font-weight: 600;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="submit"]:focus {
     background-color: #3182ce;
-    transform: translateY(-2px);
+    outline: none;
 }
 
-/* Footer Mobile */
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -298,7 +298,6 @@ footer {
     margin-top: auto;
 }
 
-/* Special link styles */
 .links-list li a[href=""] {
     color: #e53e3e;
 }
@@ -308,12 +307,10 @@ footer {
     cursor: not-allowed;
 }
 
-.links-list li a[rel="nofollow"],
-.links-list li a[rel="nofollow noindex"] {
+.links-list li a[rel="nofollow"] {
     color: #a0aec0;
 }
 
-/* Table accessibility */
 table caption {
     font-weight: bold;
     margin-bottom: 10px;
@@ -344,9 +341,7 @@ legend {
     font-weight: normal;
 }
 
-/* ===== MEDIA QUERIES ===== */
 
-/* Планшеты (768px и выше) */
 @media screen and (min-width: 768px) {
     body {
         max-width: 1200px;
@@ -354,7 +349,13 @@ legend {
         padding: 0 20px;
     }
     
-    /* Header Tablet */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 1rem 0;
+    }
+    
     .header-content {
         flex-direction: row;
         justify-content: space-between;
@@ -369,11 +370,8 @@ legend {
     h1 {
         font-size: 1.8rem;
         text-align: left;
-        flex: 1;
-        margin-left: 1rem;
     }
     
-    /* Navigation Tablet - горизонтальное меню */
     nav {
         width: auto;
         flex-direction: row;
@@ -392,12 +390,12 @@ legend {
         margin-right: 0;
     }
     
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
         background-color: #4299e1;
         color: white;
     }
     
-    /* Main content Tablet */
     main {
         padding: 2rem;
         border-radius: 8px;
@@ -406,7 +404,6 @@ legend {
         gap: 3rem;
     }
     
-    /* Возвращаем нормальный порядок элементов */
     #links-section {
         order: 1;
     }
@@ -424,17 +421,15 @@ legend {
         margin-bottom: 2rem;
     }
     
-    /* Table Tablet */
     table {
         font-size: 0.9rem;
-        display: table;
+        min-width: auto;
     }
     
     th, td {
         padding: 1rem;
     }
     
-    /* Form Tablet */
     form {
         padding: 2rem;
     }
@@ -443,45 +438,38 @@ legend {
         width: auto;
     }
     
-    /* Links list Tablet - остается вертикальным списком */
     .links-list li {
         padding: 1rem;
         margin: 0.5rem 0;
     }
 }
 
-/* Десктоп (1024px и выше) */
+
 @media screen and (min-width: 1024px) {
-    /* Header Desktop */
     header {
         padding: 1.5rem 0;
     }
     
-    /* Main content Desktop */
     main {
         padding: 2.5rem;
         gap: 4rem;
     }
     
-    /* Table Desktop */
     table {
         font-size: 1rem;
     }
     
-    /* Form Desktop */
     form {
         max-width: 700px;
         margin: 0 auto;
     }
     
-    /* Links list Desktop - остается вертикальным списком */
     .links-list li {
         padding: 1.2rem;
         font-size: 1.05rem;
     }
 }
 
-/* Большие экраны (1200px и выше) */
 @media screen and (min-width: 1200px) {
     body {
         padding: 0;
