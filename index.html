@@ -8,204 +8,215 @@
 </head>
 <body>
     <header>
-        <img src="Images/Logo.png" alt="Логотип" class="logo">
-        <h1>Задание 2</h1>
-        <nav>
-            <a href="#hrefs">Список ссылок</a>
-            <a href="#table">Таблица</a>
-            <a href="#form">Форма</a>
-        </nav>
+        <div class="header-content">
+            <img src="Images/Logo.png" alt="Логотип" class="logo">
+            <h1>Задание 2</h1>
+            <nav>
+                <a href="#links-section">Ссылки</a>
+                <a href="#table-section">Таблица</a>
+                <a href="#form-section">Форма</a>
+            </nav>
+        </div>
     </header>
     
     <main>
-        <h2 id="hrefs">Список ссылок</h2>
-        <ul>
-            <li><a href="http://kubsu.ru/">КубГу (http)</a></li>
-            <li><a href="https://kubsu.ru/">КубГу (https)</a></li>
-            <li><a href="https://kubsu.ru/"><img src="Images/image.jpg" alt="КубГу" width="224" height="168"></a></li>
-            <li><a href="/about">Внутренняя страница</a></li>
-            <li><a href="/">Главная</a></li>
-            <li><a href="#form">Ссылка на сегмент текущей страницы (Переход к форме)</a></li>
-            <li><a href="https://example.com/search?name=ivan&amp;age=20&amp;city=krasnodar">Ссылка с 3 параметрами</a></li>
-            <li><a href="https://example.com/page?id=123">Ссылка с id</a></li>
-            <li><a href="page.html">Страница в текущем каталоге</a></li>
-            <li><a href="about/page.html">Относительная ссылка на страницу в каталоге about</a></li>
-            <li><a href="../page.html">Относительная ссылка на страницу на уровень выше</a></li>
-            <li><a href="../../page.html">Относительная ссылка на страницу на два уровня выше</a></li>
-            <li>
-                <p>Тут текст, а внутри <a href="https://kubsu.ru/">контекстная ссылка</a>.</p>
-            </li>
-            <li><a href="https://ru.wikipedia.org/wiki/HTML#%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F">Ссылка на фрагмент Википедии</a></li>
-            <li>
-                <img src="Images/image.jpg" alt="Карта-изображение с ссылками" width="224" height="168" usemap="#my-map">
-                <map name="my-map">
-                    <area shape="rect" coords="0,0,112,168" href="https://kubsu.ru/" alt="Ссылка 1 (КубГу)">
-                    <area shape="circle" coords="170,80,40" href="https://example.com" alt="Ссылка 2 (Example)">
-                </map>
-            </li>
-            <li><a href="">Ссылка с пустым href</a></li>
-            <li><a>ссылка без href</a></li>
-            <li><a href="https://example.com" rel="nofollow">Запрещено для перехода поисковикам</a></li>
-            <li><a href="https://example.com" rel="nofollow noindex">Запрещено для индексации</a></li>
-            <li>
-                Нумерованный список ссылок:
-                <ol>
-                    <li><a href="https://kubsu.ru/" title="Главная КубГУ">КубГу</a></li>
-                    <li><a href="https://example.com" title="Пример сайта">Example</a></li>
-                </ol>
-            </li>
-            <li><a href="ftp://user:password@ftp.example.com/file.txt">FTP с авторизацией</a></li>
-        </ul>
+        <!-- Раздел со ссылками -->
+        <section id="links-section" class="content-section">
+            <h2>Список ссылок</h2>
+            <ul class="links-list">
+                <li><a href="http://kubsu.ru/">КубГу (http)</a></li>
+                <li><a href="https://kubsu.ru/">КубГу (https)</a></li>
+                <li><a href="https://kubsu.ru/"><img src="Images/image.jpg" alt="КубГу" width="224" height="168"></a></li>
+                <li><a href="/about">Внутренняя страница</a></li>
+                <li><a href="/">Главная</a></li>
+                <li><a href="#form-section">Ссылка на сегмент текущей страницы (Переход к форме)</a></li>
+                <li><a href="https://example.com/search?name=ivan&amp;age=20&amp;city=krasnodar">Ссылка с 3 параметрами</a></li>
+                <li><a href="https://example.com/page?id=123">Ссылка с id</a></li>
+                <li><a href="page.html">Страница в текущем каталоге</a></li>
+                <li><a href="about/page.html">Относительная ссылка на страницу в каталоге about</a></li>
+                <li><a href="../page.html">Относительная ссылка на страницу на уровень выше</a></li>
+                <li><a href="../../page.html">Относительная ссылка на страницу на два уровня выше</a></li>
+                <li>
+                    <p>Тут текст, а внутри <a href="https://kubsu.ru/">контекстная ссылка</a>.</p>
+                </li>
+                <li><a href="https://ru.wikipedia.org/wiki/HTML#%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F">Ссылка на фрагмент Википедии</a></li>
+                <li>
+                    <img src="Images/image.jpg" alt="Карта-изображение с ссылками" width="224" height="168" usemap="#my-map">
+                    <map name="my-map">
+                        <area shape="rect" coords="0,0,112,168" href="https://kubsu.ru/" alt="Ссылка 1 (КубГу)">
+                        <area shape="circle" coords="170,80,40" href="https://example.com" alt="Ссылка 2 (Example)">
+                    </map>
+                </li>
+                <li><a href="">Ссылка с пустым href</a></li>
+                <li><a>ссылка без href</a></li>
+                <li><a href="https://example.com" rel="nofollow">Запрещено для перехода поисковикам</a></li>
+                <li><a href="https://example.com" rel="nofollow noindex">Запрещено для индексации</a></li>
+                <li>
+                    Нумерованный список ссылок:
+                    <ol>
+                        <li><a href="https://kubsu.ru/" title="Главная КубГУ">КубГу</a></li>
+                        <li><a href="https://example.com" title="Пример сайта">Example</a></li>
+                    </ol>
+                </li>
+                <li><a href="ftp://user:password@ftp.example.com/file.txt">FTP с авторизацией</a></li>
+            </ul>
+        </section>
 
-        <h2 id="table">Таблица</h2>
-        <table>
-            <caption>Список IT-компаний и используемых технологий</caption>
-            <thead>
-                <tr>
-                    <th id="col1">ID</th>
-                    <th id="col2">Компания</th>
-                    <th id="col3">Сфера</th>
-                    <th id="col4">Технологии</th>
-                    <th id="col5">Статус</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td headers="col1" rowspan="3">101</td>
-                    <td headers="col2" rowspan="3">TechSolutions</td>
-                    <td headers="col3" rowspan="3">Разработка ПО</td>
-                    <td headers="col4">React</td>
-                    <td headers="col5">Активна</td>
-                </tr>
-                <tr>
-                    <td headers="col4">Node.js</td>
-                    <td headers="col5">Активна</td>
-                </tr>
-                <tr>
-                    <td headers="col4">MongoDB</td>
-                    <td headers="col5">В разработке</td>
-                </tr>
-                <tr>
-                    <td headers="col1">102</td>
-                    <td headers="col2">DataAnalytics</td>
-                    <td headers="col3">Аналитика</td>
-                    <td headers="col4">Python</td>
-                    <td headers="col5">Активна</td>
-                </tr>
-                <tr>
-                    <td headers="col1" rowspan="2">103</td>
-                    <td headers="col2" rowspan="2">CloudServices</td>
-                    <td headers="col3" rowspan="2">Облачные решения</td>
-                    <td headers="col4">AWS</td>
-                    <td headers="col5">Активна</td>
-                </tr>
-                <tr>
-                    <td headers="col4">Docker</td>
-                    <td headers="col5">Тестирование</td>
-                </tr>
-                <tr>
-                    <td headers="col1">104</td>
-                    <td headers="col2">MobileDev</td>
-                    <td headers="col3">Мобильные приложения</td>
-                    <td headers="col4">Flutter</td>
-                    <td headers="col5">Запуск</td>
-                </tr>
-                <tr>
-                    <td headers="col1" rowspan="3">105</td>
-                    <td headers="col2" rowspan="3">AI Research</td>
-                    <td headers="col3" rowspan="3">Искусственный интеллект</td>
-                    <td headers="col4">TensorFlow</td>
-                    <td headers="col5">Исследование</td>
-                </tr>
-                <tr>
-                    <td headers="col4">PyTorch</td>
-                    <td headers="col5">Разработка</td>
-                </tr>
-                <tr>
-                    <td headers="col4">OpenCV</td>
-                    <td headers="col5">Тестирование</td>
-                </tr>
-                <tr>
-                    <td headers="col1">106</td>
-                    <td headers="col2">WebStudio</td>
-                    <td headers="col3">Веб-разработка</td>
-                    <td headers="col4">Vue.js</td>
-                    <td headers="col5">Активна</td>
-                </tr>
-                <tr>
-                    <td headers="col1">107</td>
-                    <td headers="col2">Startup X</td>
-                    <td headers="col3 col4" colspan="2">Проект закрыт</td>
-                    <td headers="col5">Неактивна</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Раздел с таблицей -->
+        <section id="table-section" class="content-section">
+            <h2>Таблица IT-компаний</h2>
+            <table>
+                <caption>Список IT-компаний и используемых технологий</caption>
+                <thead>
+                    <tr>
+                        <th id="col1">ID</th>
+                        <th id="col2">Компания</th>
+                        <th id="col3">Сфера</th>
+                        <th id="col4">Технологии</th>
+                        <th id="col5">Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="col1" rowspan="3">101</td>
+                        <td headers="col2" rowspan="3">TechSolutions</td>
+                        <td headers="col3" rowspan="3">Разработка ПО</td>
+                        <td headers="col4">React</td>
+                        <td headers="col5">Активна</td>
+                    </tr>
+                    <tr>
+                        <td headers="col4">Node.js</td>
+                        <td headers="col5">Активна</td>
+                    </tr>
+                    <tr>
+                        <td headers="col4">MongoDB</td>
+                        <td headers="col5">В разработке</td>
+                    </tr>
+                    <tr>
+                        <td headers="col1">102</td>
+                        <td headers="col2">DataAnalytics</td>
+                        <td headers="col3">Аналитика</td>
+                        <td headers="col4">Python</td>
+                        <td headers="col5">Активна</td>
+                    </tr>
+                    <tr>
+                        <td headers="col1" rowspan="2">103</td>
+                        <td headers="col2" rowspan="2">CloudServices</td>
+                        <td headers="col3" rowspan="2">Облачные решения</td>
+                        <td headers="col4">AWS</td>
+                        <td headers="col5">Активна</td>
+                    </tr>
+                    <tr>
+                        <td headers="col4">Docker</td>
+                        <td headers="col5">Тестирование</td>
+                    </tr>
+                    <tr>
+                        <td headers="col1">104</td>
+                        <td headers="col2">MobileDev</td>
+                        <td headers="col3">Мобильные приложения</td>
+                        <td headers="col4">Flutter</td>
+                        <td headers="col5">Запуск</td>
+                    </tr>
+                    <tr>
+                        <td headers="col1" rowspan="3">105</td>
+                        <td headers="col2" rowspan="3">AI Research</td>
+                        <td headers="col3" rowspan="3">Искусственный интеллект</td>
+                        <td headers="col4">TensorFlow</td>
+                        <td headers="col5">Исследование</td>
+                    </tr>
+                    <tr>
+                        <td headers="col4">PyTorch</td>
+                        <td headers="col5">Разработка</td>
+                    </tr>
+                    <tr>
+                        <td headers="col4">OpenCV</td>
+                        <td headers="col5">Тестирование</td>
+                    </tr>
+                    <tr>
+                        <td headers="col1">106</td>
+                        <td headers="col2">WebStudio</td>
+                        <td headers="col3">Веб-разработка</td>
+                        <td headers="col4">Vue.js</td>
+                        <td headers="col5">Активна</td>
+                    </tr>
+                    <tr>
+                        <td headers="col1">107</td>
+                        <td headers="col2">Startup X</td>
+                        <td headers="col3 col4" colspan="2">Проект закрыт</td>
+                        <td headers="col5">Неактивна</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <h2 id="form">Форма</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="fio">ФИО:</label>
-                <input type="text" id="fio" name="fio" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" placeholder="+7(999)123-45-67" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="birthdate">Дата рождения:</label>
-                <input type="date" id="birthdate" name="birthdate" required>
-            </div>
-            
-            <fieldset class="form-group">
-                <legend>Пол:</legend>
-                <label class="radio-label">
-                    <input type="radio" id="gender-male" name="gender" value="male" required> 
-                    Мужской
-                </label>
-                <label class="radio-label">
-                    <input type="radio" id="gender-female" name="gender" value="female"> 
-                    Женский
-                </label>
-            </fieldset>
-            
-            <div class="form-group">
-                <label for="languages">Любимый язык программирования:</label>
-                <select id="languages" name="languages" multiple size="5" required>
-                    <option value="pascal">Pascal</option>
-                    <option value="c">C</option>
-                    <option value="cpp">C++</option>
-                    <option value="javascript">JavaScript</option>
-                    <option value="php">PHP</option>
-                    <option value="python">Python</option>
-                    <option value="java">Java</option>
-                    <option value="haskell">Haskell</option>
-                    <option value="clojure">Clojure</option>
-                    <option value="prolog">Prolog</option>
-                    <option value="scala">Scala</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="bio">Биография:</label>
-                <textarea id="bio" name="bio" rows="5" cols="40"></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" id="contract" name="contract" required> 
-                    С контрактом ознакомлен(а)
-                </label>
-            </div>
-            
-            <button type="submit">Сохранить</button>
-        </form>
+        <!-- Раздел с формой -->
+        <section id="form-section" class="content-section">
+            <h2>Форма</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7(999)123-45-67" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                
+                <fieldset class="form-group">
+                    <legend>Пол:</legend>
+                    <label class="radio-label">
+                        <input type="radio" id="gender-male" name="gender" value="male" required> 
+                        Мужской
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" id="gender-female" name="gender" value="female"> 
+                        Женский
+                    </label>
+                </fieldset>
+                
+                <div class="form-group">
+                    <label for="languages">Любимый язык программирования:</label>
+                    <select id="languages" name="languages" multiple size="5" required>
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskell">Haskell</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bio">Биография:</label>
+                    <textarea id="bio" name="bio" rows="5" cols="40"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="contract" name="contract" required> 
+                        С контрактом ознакомлен(а)
+                    </label>
+                </div>
+                
+                <button type="submit">Сохранить</button>
+            </form>
+        </section>
     </main>
     
     <footer>

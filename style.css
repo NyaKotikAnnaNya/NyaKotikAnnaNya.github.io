@@ -1,6 +1,8 @@
-
+/* Mobile First стили */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -8,87 +10,133 @@ body {
     line-height: 1.6;
     color: #2d3748;
     background-color: #f7fafc;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header styles */
+/* Header Mobile */
 header {
     background: #ffffff;
     border-bottom: 1px solid #e2e8f0;
-    padding: 1.5rem 0;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
-    vertical-align: middle;
-    margin-right: 1rem;
+    width: 40px;
+    height: 40px;
 }
 
 h1 {
-    display: inline-block;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #2d3748;
-    vertical-align: middle;
+    text-align: center;
 }
 
+/* Navigation Mobile - вертикальный список */
 nav {
-    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 nav a {
     color: #4a5568;
     text-decoration: none;
-    margin-right: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: 6px;
+    text-align: center;
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
     transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 nav a:hover {
-    background-color: #edf2f7;
-    color: #2b6cb0;
+    background-color: #4299e1;
+    color: white;
+    transform: translateY(-2px);
 }
 
-/* Main content */
+/* Main content Mobile */
 main {
+    flex: 1;
     background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
+/* Секции контента */
+.content-section {
+    scroll-margin-top: 100px; /* Для плавной прокрутки с учетом фиксированного header */
+}
+
+/* Используем order для изменения порядка отображения на мобильных */
+#links-section {
+    order: 2;
+}
+
+#table-section {
+    order: 1;
+}
+
+#form-section {
+    order: 3;
+}
+
+/* Заголовки разделов */
 h2 {
     color: #2d3748;
     font-weight: 600;
-    margin: 2rem 0 1rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 3px solid #4299e1;
+    font-size: 1.4rem;
 }
 
-h2:first-of-type {
-    margin-top: 0;
-}
-
-/* Lists */
-ul {
+/* Стили для списка ссылок - ВЕРТИКАЛЬНЫЙ СПИСОК */
+.links-list {
     list-style-type: none;
 }
 
-li {
+.links-list li {
     margin: 0.8rem 0;
     padding: 0.8rem;
     border-radius: 6px;
     transition: background-color 0.2s ease;
+    border-left: 4px solid transparent;
 }
 
-li:hover {
+.links-list li:hover {
     background-color: #f7fafc;
+    border-left-color: #4299e1;
+    transform: translateX(5px);
+}
+
+/* Специальные стили для разных типов ссылок */
+.links-list li:nth-child(odd) {
+    background-color: #f8fafc;
+}
+
+.links-list li:nth-child(even) {
+    background-color: #ffffff;
 }
 
 /* Links */
@@ -103,51 +151,72 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Image map */
-img[usemap] {
+/* Стили для изображений в списке ссылок */
+.links-list img {
     border: 1px solid #e2e8f0;
     border-radius: 6px;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Table */
+/* Стили для вложенных списков */
+.links-list ol {
+    margin: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.links-list ol li {
+    margin: 0.3rem 0;
+    padding: 0.3rem;
+    background: none;
+    border: none;
+}
+
+.links-list ol li:hover {
+    background: none;
+    transform: none;
+    border-left: none;
+}
+
+/* Table Mobile */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    display: block;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background: white;
 }
 
 th {
-    background-color: #f7fafc;
-    color: #4a5568;
+    background-color: #4299e1;
+    color: white;
     font-weight: 600;
     text-align: left;
-    padding: 1rem;
-    border-bottom: 2px solid #e2e8f0;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 2px solid #3182ce;
 }
 
 td {
-    padding: 0.8rem 1rem;
+    padding: 0.6rem 0.5rem;
     border-bottom: 1px solid #e2e8f0;
 }
 
-/* Table row backgrounds */
-tr.even {
-    background-color: #fafafa;
-}
-
-tr.odd {
-    background-color: #ffffff;
-}
-
 tr:hover {
-    background-color: #edf2f7;
+    background-color: #ebf8ff;
 }
 
-/* Form styles */
+/* Form styles Mobile */
 form {
-    max-width: 600px;
+    width: 100%;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
 }
 
 label {
@@ -169,6 +238,7 @@ textarea {
     border-radius: 6px;
     font-size: 1rem;
     transition: border-color 0.2s ease;
+    background: white;
 }
 
 input:focus,
@@ -208,64 +278,48 @@ button[type="submit"] {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    width: 100%;
+    font-weight: 600;
 }
 
 button[type="submit"]:hover {
     background-color: #3182ce;
+    transform: translateY(-2px);
 }
 
-/* Footer */
+/* Footer Mobile */
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem;
     color: #718096;
     border-top: 1px solid #e2e8f0;
-    margin-top: 2rem;
+    background: white;
+    width: 100%;
+    margin-top: auto;
 }
 
 /* Special link styles */
-.nofollow-link {
-    color: #a0aec0;
-}
-
-.empty-link {
+.links-list li a[href=""] {
     color: #e53e3e;
 }
 
-.no-href-link {
+.links-list li a:not([href]) {
     color: #a0aec0;
     cursor: not-allowed;
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    body {
-        padding: 0 10px;
-    }
-    
-    main {
-        padding: 1rem;
-    }
-    
-    nav a {
-        display: block;
-        margin: 0.5rem 0;
-    }
-    
-    table {
-        font-size: 0.8rem;
-    }
-    
-    th, td {
-        padding: 0.5rem;
-    }
+.links-list li a[rel="nofollow"],
+.links-list li a[rel="nofollow noindex"] {
+    color: #a0aec0;
 }
 
-/* Additional table styles for accessibility */
+/* Table accessibility */
 table caption {
     font-weight: bold;
     margin-bottom: 10px;
     text-align: left;
+    color: #4a5568;
+    font-size: 1.1rem;
 }
 
 fieldset {
@@ -273,6 +327,7 @@ fieldset {
     border-radius: 6px;
     padding: 1rem;
     margin: 1rem 0;
+    background: white;
 }
 
 legend {
@@ -287,4 +342,153 @@ legend {
 
 .checkbox-label {
     font-weight: normal;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Планшеты (768px и выше) */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Header Tablet */
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        text-align: left;
+        flex: 1;
+        margin-left: 1rem;
+    }
+    
+    /* Navigation Tablet - горизонтальное меню */
+    nav {
+        width: auto;
+        flex-direction: row;
+        gap: 0;
+    }
+    
+    nav a {
+        background: none;
+        border: none;
+        margin-right: 1.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+    }
+    
+    nav a:last-child {
+        margin-right: 0;
+    }
+    
+    nav a:hover {
+        background-color: #4299e1;
+        color: white;
+    }
+    
+    /* Main content Tablet */
+    main {
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+        gap: 3rem;
+    }
+    
+    /* Возвращаем нормальный порядок элементов */
+    #links-section {
+        order: 1;
+    }
+    
+    #table-section {
+        order: 2;
+    }
+    
+    #form-section {
+        order: 3;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Table Tablet */
+    table {
+        font-size: 0.9rem;
+        display: table;
+    }
+    
+    th, td {
+        padding: 1rem;
+    }
+    
+    /* Form Tablet */
+    form {
+        padding: 2rem;
+    }
+    
+    button[type="submit"] {
+        width: auto;
+    }
+    
+    /* Links list Tablet - остается вертикальным списком */
+    .links-list li {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Десктоп (1024px и выше) */
+@media screen and (min-width: 1024px) {
+    /* Header Desktop */
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    /* Main content Desktop */
+    main {
+        padding: 2.5rem;
+        gap: 4rem;
+    }
+    
+    /* Table Desktop */
+    table {
+        font-size: 1rem;
+    }
+    
+    /* Form Desktop */
+    form {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Links list Desktop - остается вертикальным списком */
+    .links-list li {
+        padding: 1.2rem;
+        font-size: 1.05rem;
+    }
+}
+
+/* Большие экраны (1200px и выше) */
+@media screen and (min-width: 1200px) {
+    body {
+        padding: 0;
+    }
+    
+    header, main, footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
